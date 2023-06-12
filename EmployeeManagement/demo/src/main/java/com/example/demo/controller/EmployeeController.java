@@ -38,8 +38,8 @@ public class EmployeeController {
         employeeService.addEmployee(employeeDto);
     }
 
-    @PostMapping("update-by-id/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @PutMapping("update-by-id/{id}")
+    @ResponseStatus(HttpStatus.OK)
     void updateEmployee(@RequestBody EmployeeDto employeeDto, @PathVariable Long id){
         employeeService.updateEmployee(employeeDto,id);
     }

@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create employees table
+      author: Murad Valiyev
+      changes:
+        - createTable:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                  remarks: id of employee
+              - column:
+                  name: firstname
+                  type: varchar(64)
+                  remarks: firstname of lesson
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lastname
+                  type: varchar(64)
+                  remarks: lastname of lesson
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: When the record created
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: When the record updated
+            remarks: Table to store information about employees
